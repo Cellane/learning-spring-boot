@@ -1,0 +1,13 @@
+logging:
+  level:
+    net:
+      milanvit: DEBUG
+    io:
+      netty: DEBUG
+      reactor: DEBUG
+    org:
+      springframework:
+        data: TRACE
+    reactor:
+      core: TRACE
+      util: TRACE
