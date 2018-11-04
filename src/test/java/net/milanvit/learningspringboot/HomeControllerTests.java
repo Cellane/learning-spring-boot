@@ -1,5 +1,7 @@
 package net.milanvit.learningspringboot;
 
+import net.milanvit.learningspringboot.images.Image;
+import net.milanvit.learningspringboot.images.ImageService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,6 @@
 package net.milanvit.learningspringboot;
 
+import net.milanvit.learningspringboot.images.Image;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

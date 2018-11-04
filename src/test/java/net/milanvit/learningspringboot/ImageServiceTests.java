@@ -1,5 +1,8 @@
 package net.milanvit.learningspringboot;
 
+import net.milanvit.learningspringboot.images.Image;
+import net.milanvit.learningspringboot.images.ImageRepository;
+import net.milanvit.learningspringboot.images.ImageService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,7 +21,6 @@ import reactor.test.StepVerifier;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 

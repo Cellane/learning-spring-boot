@@ -1,5 +1,7 @@
 package net.milanvit.learningspringboot;
 
+import net.milanvit.learningspringboot.images.Image;
+import net.milanvit.learningspringboot.images.ImageRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

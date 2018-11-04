@@ -1,4 +1,4 @@
-package net.milanvit.learningspringboot;
+package net.milanvit.learningspringboot.images;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

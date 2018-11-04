@@ -1,4 +1,4 @@
-package net.milanvit.learningspringboot;
+package net.milanvit.learningspringboot.ops;
 
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;

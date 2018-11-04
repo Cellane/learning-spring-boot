@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Learning Spring Boot: Spring-a-Gram</title>
-    <link href="/main.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet"/>
 </head>
 <body>
 <h1>Learning Spring Boot – 2nd Edition</h1>
@@ -17,6 +17,8 @@
             <th>Id</th>
             <th>Name</th>
             <th>Image</th>
+            <th></th>
+            <th></th>
             <th></th>
         </tr>
         </thead>
@@ -32,6 +34,18 @@
             <td>
                 <form th:action="@{'/images/' + ${image.name}}" th:method="delete">
                     <input type="submit" value="Delete" />
+                </form>
+            </td>
+            <td>
+                <ul>
+                    <li th:each="comment : ${image.comments}" th:text="${comment.comment}"></li>
+                </ul>
+            </td>
+            <td>
+                <form th:action="@{'/comments'}" th:method="post">
+                    <input name="comment" type="text"/>
+                    <input name="imageId" th:value="${image.id}" type="hidden"/>
+                    <input type="submit"/>
                 </form>
             </td>
         </tr>

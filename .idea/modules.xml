@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/learning-spring-boot.iml" filepath="$PROJECT_DIR$/.idea/modules/learning-spring-boot.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/learning-spring-boot_main.iml" filepath="$PROJECT_DIR$/.idea/modules/learning-spring-boot_main.iml" group="learning-spring-boot" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/learning-spring-boot_test.iml" filepath="$PROJECT_DIR$/.idea/modules/learning-spring-boot_test.iml" group="learning-spring-boot" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.milanvit.learning-spring-boot.iml" filepath="$PROJECT_DIR$/.idea/modules/net.milanvit.learning-spring-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.milanvit.learning-spring-boot.main.iml" filepath="$PROJECT_DIR$/.idea/modules/net.milanvit.learning-spring-boot.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.milanvit.learning-spring-boot.test.iml" filepath="$PROJECT_DIR$/.idea/modules/net.milanvit.learning-spring-boot.test.iml" />
     </modules>
   </component>
 </project>

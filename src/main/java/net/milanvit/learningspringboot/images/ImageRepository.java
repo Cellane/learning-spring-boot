@@ -1,4 +1,4 @@
-package net.milanvit.learningspringboot;
+package net.milanvit.learningspringboot.images;
 
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import reactor.core.publisher.Mono;

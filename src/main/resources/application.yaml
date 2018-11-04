@@ -29,3 +29,5 @@ spring:
   devtools:
     remote:
       secret: learning-spring-boot
+  main:
+    allow-bean-definition-overriding: true

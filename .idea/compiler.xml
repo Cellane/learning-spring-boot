@@ -7,6 +7,8 @@
     <bytecodeTargetLevel>
       <module name="learning-spring-boot_main" target="1.10" />
       <module name="learning-spring-boot_test" target="1.10" />
+      <module name="net.milanvit.learning-spring-boot.main" target="1.10" />
+      <module name="net.milanvit.learning-spring-boot.test" target="1.10" />
     </bytecodeTargetLevel>
   </component>
 </project>

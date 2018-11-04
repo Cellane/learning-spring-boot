@@ -1,5 +1,7 @@
 package net.milanvit.learningspringboot;
 
+import net.milanvit.learningspringboot.images.CommentReaderRepository;
+import net.milanvit.learningspringboot.images.ImageService;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -11,14 +13,17 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 @Controller
 public class HomeController {
     private static final String BASE_PATH = "/images";
     private static final String FILENAME = "{filename:.+}";
+    private final CommentReaderRepository repository;
     private final ImageService imageService;
 
-    public HomeController(ImageService imageService) {
+    public HomeController(CommentReaderRepository repository, ImageService imageService) {
+        this.repository = repository;
         this.imageService = imageService;
     }
 
@@ -52,7 +57,16 @@ public class HomeController {
 
     @GetMapping("/")
     public Mono<String> index(Model model) {
-        model.addAttribute("images", imageService.findAllImages());
+        model.addAttribute("images",
+            imageService
+                .findAllImages()
+                .flatMap(image -> Mono.just(image)
+                    .zipWith(repository.findByImageId(image.getId()).collectList()))
+                .map(imageAndComments -> new HashMap<String, Object>() {{
+                    put("id", imageAndComments.getT1().getId());
+                    put("name", imageAndComments.getT1().getName());
+                    put("comments", imageAndComments.getT2());
+                }}));
         model.addAttribute("extra", "DevTools can also detect code changes, too.");
 
         return Mono.just("index");

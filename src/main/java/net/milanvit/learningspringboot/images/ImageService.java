@@ -1,4 +1,4 @@
-package net.milanvit.learningspringboot;
+package net.milanvit.learningspringboot.images;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.boot.CommandLineRunner;
@@ -103,11 +103,13 @@ public class ImageService {
     @Bean
     CommandLineRunner setUp() throws IOException {
         return args -> {
-            FileSystemUtils.deleteRecursively(new File(UPLOAD_ROOT));
-            Files.createDirectory(Paths.get(UPLOAD_ROOT));
-            FileCopyUtils.copy("Test file", new FileWriter(UPLOAD_ROOT + "/learning-spring-boot-cover.jpg"));
-            FileCopyUtils.copy("Test file2", new FileWriter(UPLOAD_ROOT + "/learning-spring-boot-2nd-edition-cover.jpg"));
-            FileCopyUtils.copy("Test file2", new FileWriter(UPLOAD_ROOT + "/bazinga.png"));
+            if (false) {
+                FileSystemUtils.deleteRecursively(new File(UPLOAD_ROOT));
+                Files.createDirectory(Paths.get(UPLOAD_ROOT));
+                FileCopyUtils.copy("Test file", new FileWriter(UPLOAD_ROOT + "/learning-spring-boot-cover.jpg"));
+                FileCopyUtils.copy("Test file2", new FileWriter(UPLOAD_ROOT + "/learning-spring-boot-2nd-edition-cover.jpg"));
+                FileCopyUtils.copy("Test file2", new FileWriter(UPLOAD_ROOT + "/bazinga.png"));
+            }
         };
     }
 }
