@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="net.milanvit.learningspringboot.ImageServiceTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-11-04T02:21:19" hostname="Fenchurch.local" time="0.114">
+  <properties/>
+  <testcase name="deleteImageShouldWork" classname="net.milanvit.learningspringboot.ImageServiceTests" time="0.026"/>
+  <testcase name="createImageShouldWork" classname="net.milanvit.learningspringboot.ImageServiceTests" time="0.058"/>
+  <testcase name="findAllShouldJustReturnTheFlux" classname="net.milanvit.learningspringboot.ImageServiceTests" time="0.014"/>
+  <testcase name="findOneShouldReturnNotYetFetchedUrl" classname="net.milanvit.learningspringboot.ImageServiceTests" time="0.012"/>
+  <system-out><![CDATA[2018-11-04 11:21:13.624  INFO 14138 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [net.milanvit.learningspringboot.ImageServiceTests], using SpringBootContextLoader
+2018-11-04 11:21:13.626  INFO 14138 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [net.milanvit.learningspringboot.ImageServiceTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-11-04 11:21:13.626  INFO 14138 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [net.milanvit.learningspringboot.ImageServiceTests]: ImageServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-11-04 11:21:13.633  INFO 14138 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration net.milanvit.learningspringboot.LearningSpringBootApplication for test class net.milanvit.learningspringboot.ImageServiceTests
+2018-11-04 11:21:13.638  INFO 14138 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-11-04 11:21:13.640  INFO 14138 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@756c4756, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7d385c32, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@73dc925e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@666c49a2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@71adf4ce, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4ecbef05, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5992dae0, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5d37b929, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@43223dc5, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@52004163, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1d0ac419]
+2018-11-04 11:21:13.679  INFO 14138 --- [    Test worker] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.0.RELEASE)
+
+2018-11-04 11:21:13.693  INFO 14138 --- [    Test worker] n.m.l.ImageServiceTests                  : Starting ImageServiceTests on Fenchurch.local with PID 14138 (started by milanvit in /Users/milanvit/Documents/Packt/Learning Spring Boot)
+2018-11-04 11:21:13.693 DEBUG 14138 --- [    Test worker] n.m.l.ImageServiceTests                  : Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2018-11-04 11:21:13.694  INFO 14138 --- [    Test worker] n.m.l.ImageServiceTests                  : No active profile set, falling back to default profiles: default
+2018-11-04 11:21:14.486  INFO 14138 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-11-04 11:21:14.490 DEBUG 14138 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Scanning for repositories in packages net.milanvit.learningspringboot.
+2018-11-04 11:21:14.496 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/EmbedImageRepositoryTests.class]
+2018-11-04 11:21:14.496 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/EmbedImageRepositoryTests.class]
+2018-11-04 11:21:14.497 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/EndToEndTests.class]
+2018-11-04 11:21:14.497 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/EndToEndTests.class]
+2018-11-04 11:21:14.498 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/HomeControllerTests.class]
+2018-11-04 11:21:14.498 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/HomeControllerTests.class]
+2018-11-04 11:21:14.499 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/ImageServiceTests.class]
+2018-11-04 11:21:14.499 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/ImageServiceTests.class]
+2018-11-04 11:21:14.499 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/ImageTests.class]
+2018-11-04 11:21:14.500 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/ImageTests.class]
+2018-11-04 11:21:14.501 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/LiveImageRepositoryTests.class]
+2018-11-04 11:21:14.502 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/LiveImageRepositoryTests.class]
+2018-11-04 11:21:14.502 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/APIController.class]
+2018-11-04 11:21:14.503 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/APIController.class]
+2018-11-04 11:21:14.503 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/HomeController.class]
+2018-11-04 11:21:14.504 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/HomeController.class]
+2018-11-04 11:21:14.504 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/Image.class]
+2018-11-04 11:21:14.505 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/Image.class]
+2018-11-04 11:21:14.505 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/ImageRepository.class]
+2018-11-04 11:21:14.506 DEBUG 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/ImageRepository.class]
+2018-11-04 11:21:14.506 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/ImageService.class]
+2018-11-04 11:21:14.507 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/ImageService.class]
+2018-11-04 11:21:14.507 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/InitDatabase.class]
+2018-11-04 11:21:14.507 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/InitDatabase.class]
+2018-11-04 11:21:14.508 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/LearningSpringBootApplication.class]
+2018-11-04 11:21:14.508 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/LearningSpringBootApplication.class]
+2018-11-04 11:21:14.509 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/LearningSpringBootHealthIndicator.class]
+2018-11-04 11:21:14.510 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/LearningSpringBootHealthIndicator.class]
+2018-11-04 11:21:14.514 TRACE 14138 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Spring Data Reactive MongoDB - Registering repository: imageRepository - Interface: net.milanvit.learningspringboot.ImageRepository - Factory: org.springframework.data.mongodb.repository.support.ReactiveMongoRepositoryFactoryBean
+2018-11-04 11:21:14.514  INFO 14138 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23ms. Found 1 repository interfaces.
+2018-11-04 11:21:14.517  INFO 14138 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-11-04 11:21:14.517 DEBUG 14138 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Scanning for repositories in packages net.milanvit.learningspringboot.
+2018-11-04 11:21:14.521 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/EmbedImageRepositoryTests.class]
+2018-11-04 11:21:14.521 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/EmbedImageRepositoryTests.class]
+2018-11-04 11:21:14.521 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/EndToEndTests.class]
+2018-11-04 11:21:14.522 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/EndToEndTests.class]
+2018-11-04 11:21:14.522 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/HomeControllerTests.class]
+2018-11-04 11:21:14.522 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/HomeControllerTests.class]
+2018-11-04 11:21:14.523 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/ImageServiceTests.class]
+2018-11-04 11:21:14.523 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/ImageServiceTests.class]
+2018-11-04 11:21:14.523 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/ImageTests.class]
+2018-11-04 11:21:14.524 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/ImageTests.class]
+2018-11-04 11:21:14.524 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/LiveImageRepositoryTests.class]
+2018-11-04 11:21:14.524 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/test/net/milanvit/learningspringboot/LiveImageRepositoryTests.class]
+2018-11-04 11:21:14.524 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/APIController.class]
+2018-11-04 11:21:14.525 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/APIController.class]
+2018-11-04 11:21:14.525 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/HomeController.class]
+2018-11-04 11:21:14.525 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/HomeController.class]
+2018-11-04 11:21:14.525 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/Image.class]
+2018-11-04 11:21:14.526 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/Image.class]
+2018-11-04 11:21:14.526 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/ImageRepository.class]
+2018-11-04 11:21:14.527 DEBUG 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/ImageRepository.class]
+2018-11-04 11:21:14.527 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/ImageService.class]
+2018-11-04 11:21:14.527 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/ImageService.class]
+2018-11-04 11:21:14.527 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/InitDatabase.class]
+2018-11-04 11:21:14.528 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/InitDatabase.class]
+2018-11-04 11:21:14.528 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/LearningSpringBootApplication.class]
+2018-11-04 11:21:14.528 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/LearningSpringBootApplication.class]
+2018-11-04 11:21:14.528 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Scanning file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/LearningSpringBootHealthIndicator.class]
+2018-11-04 11:21:14.529 TRACE 14138 --- [    Test worker] o.s.d.r.c.RepositoryComponentProvider    : Ignored because not matching any filter: file [/Users/milanvit/Documents/Packt/Learning Spring Boot/build/classes/java/main/net/milanvit/learningspringboot/LearningSpringBootHealthIndicator.class]
+2018-11-04 11:21:14.530  INFO 14138 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+2018-11-04 11:21:15.648  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : note: noprealloc may hurt performance in many applications
+2018-11-04 11:21:15.672  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:15.671+0900 I CONTROL  [initandlisten] MongoDB starting : pid=14365 port=61346 dbpath=/var/folders/d7/nrg_w4690d75tlr6xx0tp20c0000gq/T/embedmongo-db-d0f3c082-2744-483a-8b54-da089548df42 64-bit host=Fenchurch.local
+2018-11-04 11:21:15.672  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:15.672+0900 I CONTROL  [initandlisten] db version v3.5.5
+2018-11-04 11:21:15.672  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:15.672+0900 I CONTROL  [initandlisten] git version: 98515c812b6fa893613f063dae568ff8319cbfbd
+2018-11-04 11:21:15.673  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:15.672+0900 I CONTROL  [initandlisten] allocator: system
+2018-11-04 11:21:15.673  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:15.672+0900 I CONTROL  [initandlisten] modules: none
+2018-11-04 11:21:15.673  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:15.672+0900 I CONTROL  [initandlisten] build environment:
+2018-11-04 11:21:15.673  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:15.672+0900 I CONTROL  [initandlisten]     distarch: x86_64
+2018-11-04 11:21:15.673  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:15.672+0900 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-11-04 11:21:15.673  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:15.672+0900 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", http: { enabled: false }, port: 61346 }, security: { authorization: "disabled" }, storage: { dbPath: "/var/folders/d7/nrg_w4690d75tlr6xx0tp20c0000gq/T/embedmongo-db-d0f3c082-2744-483a-8b54-da089548df42", journal: { enabled: false }, mmapv1: { preallocDataFiles: false, smallFiles: true }, syncPeriodSecs: 0.0 } }
+2018-11-04 11:21:15.675  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:15.674+0900 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7680M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=0,log_size=2GB),statistics_log=(wait=0),verbose=(recovery_progress),,log=(enabled=false),
+2018-11-04 11:21:16.029  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:16.028+0900 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2018-11-04 11:21:16.029  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:16.028+0900 I CONTROL  [initandlisten] 
+2018-11-04 11:21:16.029  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:16.028+0900 I CONTROL  [initandlisten] ** NOTE: This is a development version (3.5.5) of MongoDB.
+2018-11-04 11:21:16.029  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:16.028+0900 I CONTROL  [initandlisten] **       Not recommended for production.
+2018-11-04 11:21:16.029  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:16.028+0900 I CONTROL  [initandlisten] 
+2018-11-04 11:21:16.174  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:16.174+0900 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/var/folders/d7/nrg_w4690d75tlr6xx0tp20c0000gq/T/embedmongo-db-d0f3c082-2744-483a-8b54-da089548df42/diagnostic.data'
+2018-11-04 11:21:16.383  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:16.382+0900 I INDEX    [initandlisten] build index on: admin.system.version properties: { v: 2, key: { version: 1 }, name: "incompatible_with_version_32", ns: "admin.system.version" }
+2018-11-04 11:21:16.383  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:16.382+0900 I INDEX    [initandlisten] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2018-11-04 11:21:16.400  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:16.400+0900 I INDEX    [initandlisten] build index done.  scanned 0 total records. 0 secs
+2018-11-04 11:21:16.401  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:16.401+0900 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 3.4
+2018-11-04 11:21:16.401  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:16.401+0900 I NETWORK  [thread1] waiting for connections on port 61346
+2018-11-04 11:21:16.402  INFO 14138 --- [    Test worker] d.f.embed.mongo.MongodExecutable         : start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@355d115a
+2018-11-04 11:21:16.412  INFO 14138 --- [    Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:61346], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2018-11-04 11:21:16.412  INFO 14138 --- [    Test worker] org.mongodb.driver.cluster               : Adding discovered server localhost:61346 to client view of cluster
+2018-11-04 11:21:16.416  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:16.416+0900 I NETWORK  [thread1] connection accepted from 127.0.0.1:61353 #1 (1 connection now open)
+2018-11-04 11:21:16.416  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:16.416+0900 I NETWORK  [conn1] received client metadata from 127.0.0.1:61353 conn1: { driver: { name: "mongo-java-driver", version: "3.8.2" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.13.6" }, platform: "Java/Oracle Corporation/10.0.1+10" }
+2018-11-04 11:21:16.422  INFO 14138 --- [localhost:61346] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:9, serverValue:1}] to localhost:61346
+2018-11-04 11:21:16.424  INFO 14138 --- [localhost:61346] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:61346, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 5, 5]}, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=1061921}
+2018-11-04 11:21:16.424  INFO 14138 --- [localhost:61346] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2018-11-04 11:21:16.486 DEBUG 14138 --- [    Test worker] .m.c.i.MongoPersistentEntityIndexCreator : Analyzing class class net.milanvit.learningspringboot.Image for index information.
+2018-11-04 11:21:16.553  WARN 14138 --- [    Test worker] reactor.netty.tcp.TcpResources           : [http] resources will use the default LoopResources: DefaultLoopResources {prefix=reactor-http, daemon=true, selectCount=4, workerCount=4}
+2018-11-04 11:21:16.554  WARN 14138 --- [    Test worker] reactor.netty.tcp.TcpResources           : [http] resources will use the default ConnectionProvider: PooledConnectionProvider {name=http, poolFactory=reactor.netty.resources.ConnectionProvider$$Lambda$980/956173552@2a22df7b}
+2018-11-04 11:21:17.648  INFO 14138 --- [    Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:61346], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2018-11-04 11:21:17.652  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:17.652+0900 I NETWORK  [thread1] connection accepted from 127.0.0.1:61354 #2 (2 connections now open)
+2018-11-04 11:21:17.665 DEBUG 14138 --- [    Test worker] eactiveMongoPersistentEntityIndexCreator : Analyzing class class net.milanvit.learningspringboot.Image for index information.
+2018-11-04 11:21:17.669  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:17.667+0900 I NETWORK  [conn2] received client metadata from 127.0.0.1:61354 conn2: { driver: { name: "mongo-java-driver|mongo-java-driver-reactivestreams", version: "3.8.2|1.9.2" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.13.6" }, platform: "Java/Oracle Corporation/10.0.1+10" }
+2018-11-04 11:21:17.675  INFO 14138 --- [localhost:61346] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:10, serverValue:2}] to localhost:61346
+2018-11-04 11:21:17.681  INFO 14138 --- [localhost:61346] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:61346, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 5, 5]}, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=4375699}
+2018-11-04 11:21:18.393  INFO 14138 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2018-11-04 11:21:18.884 DEBUG 14138 --- [    Test worker] reactor.core.publisher.Hooks             : Enabling stacktrace debugging via onOperatorDebug
+2018-11-04 11:21:18.886 DEBUG 14138 --- [    Test worker] reactor.core.publisher.Hooks             : Hooking onEachOperator: onOperatorDebug
+2018-11-04 11:21:19.166  INFO 14138 --- [    Test worker] n.m.l.ImageServiceTests                  : Started ImageServiceTests in 5.521 seconds (JVM running for 22.598)
+2018-11-04 11:21:19.170  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:19.170+0900 I NETWORK  [thread1] connection accepted from 127.0.0.1:61355 #3 (3 connections now open)
+2018-11-04 11:21:19.171  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:19.171+0900 I NETWORK  [conn3] received client metadata from 127.0.0.1:61355 conn3: { driver: { name: "mongo-java-driver", version: "3.8.2" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.13.6" }, platform: "Java/Oracle Corporation/10.0.1+10" }
+2018-11-04 11:21:19.173  INFO 14138 --- [    Test worker] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:11, serverValue:3}] to localhost:61346
+2018-11-04 11:21:19.174  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:19.174+0900 I COMMAND  [conn3] CMD: drop test.image
+2018-11-04 11:21:19.177 DEBUG 14138 --- [    Test worker] o.s.data.mongodb.core.MongoTemplate      : Dropped collection [image]
+2018-11-04 11:21:19.190 DEBUG 14138 --- [    Test worker] o.s.data.mongodb.core.MongoTemplate      : Inserting Document containing fields: [_id, name, _class] in collection: image
+2018-11-04 11:21:19.336  INFO 14138 --- [      Thread-15] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-11-04T11:21:19.335+0900 I COMMAND  [conn3] command test.image command: insert { insert: "image", ordered: true, documents: [ { _id: "1", name: "learning-spring-boot-cover.jpg", _class: "net.milanvit.learningspringboot.Image" } ] } ninserted:1 keysInserted:1 numYields:0 reslen:44 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 143ms
+2018-11-04 11:21:19.337 DEBUG 14138 --- [    Test worker] o.s.data.mongodb.core.MongoTemplate      : Inserting Document containing fields: [_id, name, _class] in collection: image
+2018-11-04 11:21:19.339 DEBUG 14138 --- [    Test worker] o.s.data.mongodb.core.MongoTemplate      : Inserting Document containing fields: [_id, name, _class] in collection: image
+Image(id=1, name=learning-spring-boot-cover.jpg)
+Image(id=2, name=learning-spring-boot-2nd-edition-cover.jpg)
+Image(id=3, name=bazinga.png)
+2018-11-04 11:21:19.370  INFO 14138 --- [    Test worker] deleteImage-when                         : | onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.371  INFO 14138 --- [    Test worker] deleteImage-done                         : | onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.371  INFO 14138 --- [    Test worker] deleteImage-done                         : | request(unbounded)
+2018-11-04 11:21:19.371  INFO 14138 --- [    Test worker] deleteImage-when                         : | request(unbounded)
+2018-11-04 11:21:19.372  INFO 14138 --- [    Test worker] deleteImage-record                       : | onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.372  INFO 14138 --- [    Test worker] deleteImage-record                       : | request(unbounded)
+2018-11-04 11:21:19.372  INFO 14138 --- [    Test worker] deleteImage-find                         : onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.372  INFO 14138 --- [    Test worker] deleteImage-find                         : request(unbounded)
+2018-11-04 11:21:19.372  INFO 14138 --- [    Test worker] deleteImage-find                         : onNext(Image(id=1, name=alpha.jpg))
+2018-11-04 11:21:19.373  INFO 14138 --- [    Test worker] deleteImage-record                       : | onComplete()
+2018-11-04 11:21:19.373  INFO 14138 --- [    Test worker] deleteImage-find                         : onComplete()
+2018-11-04 11:21:19.374  INFO 14138 --- [    Test worker] deleteImage-file                         : onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.374  INFO 14138 --- [    Test worker] deleteImage-file                         : request(unbounded)
+2018-11-04 11:21:19.374  INFO 14138 --- [    Test worker] deleteImage-file                         : onComplete()
+2018-11-04 11:21:19.374  INFO 14138 --- [    Test worker] deleteImage-when                         : | onComplete()
+2018-11-04 11:21:19.374  INFO 14138 --- [    Test worker] deleteImage-done                         : | onComplete()
+2018-11-04 11:21:19.419  INFO 14138 --- [    Test worker] createImage-files                        : | onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.419  INFO 14138 --- [    Test worker] createImage-flatMap                      : | onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.419  INFO 14138 --- [    Test worker] createImage-done                         : | onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.419  INFO 14138 --- [    Test worker] createImage-done                         : | request(unbounded)
+2018-11-04 11:21:19.419  INFO 14138 --- [    Test worker] createImage-flatMap                      : | request(unbounded)
+2018-11-04 11:21:19.420  INFO 14138 --- [    Test worker] createImage-files                        : | request(256)
+2018-11-04 11:21:19.420  INFO 14138 --- [    Test worker] createImage-files                        : | onNext(Mock for FilePart, hashCode: 1515302597)
+2018-11-04 11:21:19.423  INFO 14138 --- [    Test worker] createImage-when                         : | onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.423  INFO 14138 --- [    Test worker] createImage-when                         : | request(32)
+2018-11-04 11:21:19.424  INFO 14138 --- [    Test worker] createImage-save                         : onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.424  INFO 14138 --- [    Test worker] createImage-save                         : request(unbounded)
+2018-11-04 11:21:19.424  INFO 14138 --- [    Test worker] createImage-save                         : onNext(Image(id=2, name=bravo.jpg))
+2018-11-04 11:21:19.424  INFO 14138 --- [    Test worker] createImage-save                         : onComplete()
+2018-11-04 11:21:19.424  INFO 14138 --- [    Test worker] createImage-copy                         : | onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.425  INFO 14138 --- [    Test worker] createImage-copy                         : | request(unbounded)
+2018-11-04 11:21:19.425  INFO 14138 --- [    Test worker] createImage-pickTarget                   : onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.425  INFO 14138 --- [    Test worker] createImage-newFile                      : | onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.425  INFO 14138 --- [    Test worker] createImage-newFile                      : | request(unbounded)
+2018-11-04 11:21:19.425  INFO 14138 --- [    Test worker] createImage-pickTarget                   : request(unbounded)
+2018-11-04 11:21:19.425  INFO 14138 --- [    Test worker] createImage-pickTarget                   : onNext(upload-dir/alpha.jpg)
+2018-11-04 11:21:19.426  INFO 14138 --- [    Test worker] createImage-newFile                      : | onNext(upload-dir/alpha.jpg)
+2018-11-04 11:21:19.426  INFO 14138 --- [    Test worker] createImage-copy                         : | onComplete()
+2018-11-04 11:21:19.427  INFO 14138 --- [    Test worker] createImage-when                         : | onComplete()
+2018-11-04 11:21:19.427  INFO 14138 --- [    Test worker] createImage-files                        : | request(1)
+2018-11-04 11:21:19.427  INFO 14138 --- [    Test worker] createImage-pickTarget                   : onComplete()
+2018-11-04 11:21:19.427  INFO 14138 --- [    Test worker] createImage-newFile                      : | onComplete()
+2018-11-04 11:21:19.427  INFO 14138 --- [    Test worker] createImage-files                        : | onNext(Mock for FilePart, hashCode: 1348633867)
+2018-11-04 11:21:19.428  INFO 14138 --- [    Test worker] createImage-when                         : | onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.429  INFO 14138 --- [    Test worker] createImage-when                         : | request(32)
+2018-11-04 11:21:19.429  INFO 14138 --- [    Test worker] createImage-save                         : onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.429  INFO 14138 --- [    Test worker] createImage-save                         : request(unbounded)
+2018-11-04 11:21:19.429  INFO 14138 --- [    Test worker] createImage-save                         : onNext(Image(id=2, name=bravo.jpg))
+2018-11-04 11:21:19.429  INFO 14138 --- [    Test worker] createImage-save                         : onComplete()
+2018-11-04 11:21:19.430  INFO 14138 --- [    Test worker] createImage-copy                         : | onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.430  INFO 14138 --- [    Test worker] createImage-copy                         : | request(unbounded)
+2018-11-04 11:21:19.430  INFO 14138 --- [    Test worker] createImage-pickTarget                   : onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.430  INFO 14138 --- [    Test worker] createImage-newFile                      : | onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.430  INFO 14138 --- [    Test worker] createImage-newFile                      : | request(unbounded)
+2018-11-04 11:21:19.430  INFO 14138 --- [    Test worker] createImage-pickTarget                   : request(unbounded)
+2018-11-04 11:21:19.430  INFO 14138 --- [    Test worker] createImage-pickTarget                   : onNext(upload-dir/bravo.jpg)
+2018-11-04 11:21:19.431  INFO 14138 --- [    Test worker] createImage-newFile                      : | onNext(upload-dir/bravo.jpg)
+2018-11-04 11:21:19.432  INFO 14138 --- [    Test worker] createImage-copy                         : | onComplete()
+2018-11-04 11:21:19.432  INFO 14138 --- [    Test worker] createImage-when                         : | onComplete()
+2018-11-04 11:21:19.432  INFO 14138 --- [    Test worker] createImage-files                        : | request(1)
+2018-11-04 11:21:19.433  INFO 14138 --- [    Test worker] createImage-pickTarget                   : onComplete()
+2018-11-04 11:21:19.433  INFO 14138 --- [    Test worker] createImage-newFile                      : | onComplete()
+2018-11-04 11:21:19.433  INFO 14138 --- [    Test worker] createImage-files                        : | onComplete()
+2018-11-04 11:21:19.433  INFO 14138 --- [    Test worker] createImage-flatMap                      : | onComplete()
+2018-11-04 11:21:19.433  INFO 14138 --- [    Test worker] createImage-done                         : | onComplete()
+2018-11-04 11:21:19.446  INFO 14138 --- [    Test worker] findAll                                  : | onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.446  INFO 14138 --- [    Test worker] findAll                                  : | request(unbounded)
+2018-11-04 11:21:19.446  INFO 14138 --- [    Test worker] findAll                                  : | onNext(Image(id=1, name=alpha.jpg))
+2018-11-04 11:21:19.446  INFO 14138 --- [    Test worker] findAll                                  : | onNext(Image(id=2, name=bravo.jpg))
+2018-11-04 11:21:19.450  INFO 14138 --- [    Test worker] findAll                                  : | onComplete()
+2018-11-04 11:21:19.457  INFO 14138 --- [    Test worker] findOne                                  : onSubscribe([Fuseable] FluxOnAssembly.OnAssemblySubscriber)
+2018-11-04 11:21:19.458  INFO 14138 --- [    Test worker] findOne                                  : request(unbounded)
+2018-11-04 11:21:19.459  INFO 14138 --- [    Test worker] findOne                                  : onNext(URL [file:upload-dir/alpha.jpg])
+2018-11-04 11:21:19.462  INFO 14138 --- [    Test worker] findOne                                  : onComplete()
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

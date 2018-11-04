@@ -1,5 +1,6 @@
 package net.milanvit.learningspringboot;
 
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
@@ -23,10 +24,12 @@ public class ImageService {
     public static String UPLOAD_ROOT = "upload-dir";
     private final ResourceLoader resourceLoader;
     private final ImageRepository imageRepository;
+    private final MeterRegistry meterRegistry;
 
-    public ImageService(ResourceLoader resourceLoader, ImageRepository imageRepository) {
+    public ImageService(ResourceLoader resourceLoader, ImageRepository imageRepository, MeterRegistry meterRegistry) {
         this.resourceLoader = resourceLoader;
         this.imageRepository = imageRepository;
+        this.meterRegistry = meterRegistry;
     }
 
     public Flux<Image> findAllImages() {
@@ -61,8 +64,13 @@ public class ImageService {
                     .log("createImage-newFile")
                     .flatMap(file::transferTo)
                     .log("createImage-copy");
+                Mono<Void> countFile = Mono.fromRunnable(() -> {
+                    meterRegistry
+                        .summary("files.uploaded.bytes")
+                        .record(Paths.get(UPLOAD_ROOT, file.filename()).toFile().length());
+                });
 
-                return Mono.when(saveDatabaseImage, copyFile)
+                return Mono.when(saveDatabaseImage, copyFile, countFile)
                     .log("createImage-when");
             })
             .log("createImage-flatMap")
